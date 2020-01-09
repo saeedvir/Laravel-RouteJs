@@ -1,0 +1,38 @@
+{
+    "name": "saeedvir/RouteJs",
+    "description": "Generate Laravel Routes For Access In JavaScript",
+    "authors": [
+        {
+            "name": "saeed abdollahian",
+            "email": "saeed.es91@gmail.com"
+        }
+    ],
+    "keywords": [
+        "Route",
+        "laravel",
+        "javascript",
+        "js",
+        "project",
+        "laravel routes",
+        "laravel routes js"
+    ],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.2",
+        "laravel/laravel":"^5.8"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Saeedvir\\RouteJs\\RoutejsServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Saeedvir\\RouteJs\\": "src/"
+        }
+    }
+}
