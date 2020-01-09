@@ -2,8 +2,8 @@
 
 return [
 	'app_variable'=>'RouteJs',
-	'js_file'=>public_path('routes.js'),
-	'export_all_routes'=>false,
+	'js_file'=>public_path('routes.js'), //public/routes.js
+	'export_all_routes'=>false, // if true then export all routes
 	'routes'=>[
 		/*'home',
 		'blog',
@@ -11,5 +11,5 @@ return [
 		'post.comment',
 		'list',*/
 	],
-	'append_js'=>'',
+	'append_js'=>'', // for ex : 'var tmp="tmp_value";console.log(tmp);'
 ];
