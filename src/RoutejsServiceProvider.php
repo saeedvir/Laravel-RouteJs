@@ -14,7 +14,7 @@ class RoutejsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/config/routejs.php', 'routejs');
+        $this->mergeConfigFrom( __DIR__.'/../config/routejs.php', 'routejs');
 
     }
 
@@ -26,7 +26,7 @@ class RoutejsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/config/routejs.php' => config_path('routejs.php'),
+             __DIR__.'/../config/routejs.php' => config_path('routejs.php'),
         ]);
 
         if ($this->app->runningInConsole()) {

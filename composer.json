@@ -7,6 +7,7 @@
             "email": "saeed.es91@gmail.com"
         }
     ],
+    "homepage": "https://github.com/saeedvir/Laravel-RouteJs",
     "keywords": [
         "Route",
         "laravel",
@@ -17,8 +18,6 @@
         "laravel routes js"
     ],
     "license": "MIT",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": "^7.0"
     },
