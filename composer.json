@@ -1,36 +1,45 @@
 {
-    "name": "saeedvir/laravel-routejs",
-    "description": "Generate Laravel Routes For Access In JavaScript",
-    "authors": [
-        {
-            "name": "saeed abdollahian",
-            "email": "saeed.es91@gmail.com"
-        }
-    ],
-    "homepage": "https://github.com/saeedvir/Laravel-RouteJs",
-    "keywords": [
-        "Route",
-        "laravel",
-        "javascript",
-        "js",
-        "project",
-        "laravel routes",
-        "laravel routes js"
-    ],
-    "license": "MIT",
-    "require": {
-        "php": "^7.0"
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Saeedvir\\RouteJs\\RoutejsServiceProvider"
-            ]
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "Saeedvir\\RouteJs\\": "src/"
-        }
-    }
+   "name":"saeedvir/laravel-routejs",
+   "description":"Generate Laravel Routes For Access In JavaScript",
+   "authors":[
+      {
+         "name":"saeed abdollahian",
+         "email":"saeed.es91@gmail.com"
+      }
+   ],
+   "homepage":"https://github.com/saeedvir/Laravel-RouteJs",
+   "keywords":[
+      "Route",
+      "laravel",
+      "javascript",
+      "js",
+      "project",
+      "laravel routes",
+      "laravel routes js"
+   ],
+   "license":"MIT",
+   "require":{
+      "php":"^7.0"
+   },
+   "extra":{
+      "branch-alias":{
+         "dev-master":"1.0"
+      },
+      "laravel":{
+         "providers":[
+            "Saeedvir\\RouteJs\\RoutejsServiceProvider"
+         ]
+      }
+   },
+   "autoload":{
+      "psr-4":{
+         "Saeedvir\\RouteJs\\":"src/"
+      }
+   },
+   "config":{
+      "preferred-install":"dist",
+      "sort-packages":true
+   },
+   "minimum-stability":"dev",
+   "prefer-stable":true
 }
