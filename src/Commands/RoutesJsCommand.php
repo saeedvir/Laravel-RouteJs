@@ -50,29 +50,44 @@ class RoutesJsCommand extends Command
             $routeCollection                    = \Route::getRoutes();
             $output_js                          = ['routes' => []];
             $output_js['routes'][$v->getName()] = $v->uri;
+
+            File::put(config('routejs.js_file'),
+                'var ' . config('routejs.app_variable', 'AppRoutes') . ' = ' . json_encode($output_js) . ';' . "\n" .
+                $this->js_function . "\n" .
+                config('routejs.append_js')
+            );
+
+            print_r('"' . config('routejs.js_file') . '" Successfully Created !');
+
         } else {
             $routes_js = config('routejs.routes', []);
 
             $routeCollection = \Route::getRoutes();
 
-            $output_js = ['routes' => []];
+            if (is_array($routes_js) && count($routes_js) > 0) {
+                foreach ($routes_js as $routejs_key => $routejs_value) {
+                    $output_js = ['routes' => []];
 
-            foreach ($routeCollection as $v) {
+                    foreach ($routeCollection as $v) {
 
-                if ($v->getName() !== null && in_array($v->getName(), $routes_js, true) !== false) {
-                    $output_js['routes'][$v->getName()] = $v->uri;
+                        if ($v->getName() !== null && in_array($v->getName(), $routejs_value, true) !== false) {
+                            $output_js['routes'][$v->getName()] = $v->uri;
 
+                        }
+                    }
+
+                    File::put(config('routejs.js_files.'.$routejs_key),
+                        'var ' . config('routejs.app_variable', 'AppRoutes') . ' = ' . json_encode($output_js) . ';' . "\n" .
+                        $this->js_function . "\n" .
+                        config('routejs.append_js')
+                    );
+
+                    print_r('"' . config('routejs.js_files.'.$routejs_key) . '" Successfully Created !');
+                    echo "\r\n";
                 }
             }
+
         }
-
-        File::put(config('routejs.js_file'),
-            'var ' . config('routejs.app_variable', 'AppRoutes') . ' = ' . json_encode($output_js) . ';' . "\n" .
-            $this->js_function . "\n" .
-            config('routejs.append_js')
-        );
-
-        print_r('"' . config('routejs.js_file') . '" Successfully Created !');
 
     }
 
