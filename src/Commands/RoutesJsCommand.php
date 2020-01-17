@@ -47,9 +47,12 @@ class RoutesJsCommand extends Command
     public function handle()
     {
         if (config('routejs.export_all_routes', false) === true) {
-            $routeCollection                    = \Route::getRoutes();
-            $output_js                          = ['routes' => []];
-            $output_js['routes'][$v->getName()] = $v->uri;
+            $routeCollection = \Route::getRoutes();
+            $output_js       = ['routes' => []];
+
+            foreach ($routeCollection as $v) {
+                $output_js['routes'][$v->getName()] = $v->uri;
+            }
 
             File::put(config('routejs.js_file'),
                 'var ' . config('routejs.app_variable', 'AppRoutes') . ' = ' . json_encode($output_js) . ';' . "\n" .
@@ -76,13 +79,13 @@ class RoutesJsCommand extends Command
                         }
                     }
 
-                    File::put(config('routejs.js_files.'.$routejs_key),
+                    File::put(config('routejs.js_files.' . $routejs_key),
                         'var ' . config('routejs.app_variable', 'AppRoutes') . ' = ' . json_encode($output_js) . ';' . "\n" .
                         $this->js_function . "\n" .
                         config('routejs.append_js')
                     );
 
-                    print_r('"' . config('routejs.js_files.'.$routejs_key) . '" Successfully Created !');
+                    print_r('"' . config('routejs.js_files.' . $routejs_key) . '" Successfully Created !');
                     echo "\r\n";
                 }
             }
