@@ -1,5 +1,6 @@
 # RouteJs
-Generate Laravel Routes For Access In JavaScript
+Generate Laravel Routes For Access Laravel routes from your javascript files.
+
 <div lang="fa" dir="rtl">
 
 ## توضیحات فارسی
