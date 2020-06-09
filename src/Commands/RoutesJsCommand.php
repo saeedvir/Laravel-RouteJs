@@ -20,7 +20,7 @@ class RoutesJsCommand extends Command
      * @var string
      *
      */
-    protected $js_function = '/*https://github.com/saeedvir/Laravel-RouteJs*/function route(name,parameters){if(!RouteJs || name == null || RouteJs.routes[name] == undefined){return false;}var r_js = RouteJs.routes[name];var r_js_qs = {};Object.keys(parameters).forEach(function(key) {if(r_js.indexOf(\'{\'+key+\'}\')>-1){r_js = r_js.replace(\'{\'+key+\'}\',parameters[key]);}else{r_js_qs[key]=parameters[key];}});var queryString=null;queryString = Object.keys(r_js_qs).map((ks) => {return encodeURIComponent(ks) + \'=\' + encodeURIComponent(r_js_qs[ks}).join(\'&\');r_js_qs={};if(queryString==null || queryString==""){return r_js;}else{return r_js+\'?\'+queryString;}}';
+    protected $js_function = '/*https://github.com/saeedvir/Laravel-RouteJs*/function route(name,parameters){if(!RouteJs || name == null || RouteJs.routes[name] == undefined){return false;}var r_js = RouteJs.routes[name];var r_js_qs = {};Object.keys(parameters).forEach(function(key) {if(r_js.indexOf(\'{\'+key+\'}\')>-1){r_js = r_js.replace(\'{\'+key+\'}\',parameters[key]);}else{r_js_qs[key]=parameters[key];}});var queryString=null;queryString = Object.keys(r_js_qs).map((ks) => {return encodeURIComponent(ks) + \'=\' + encodeURIComponent(r_js_qs[ks])}).join(\'&\');r_js_qs={};if(queryString==null || queryString==""){return r_js;}else{return r_js+\'?\'+queryString;}}';
 
     /**
      * The console command description.
