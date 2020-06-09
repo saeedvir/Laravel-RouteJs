@@ -95,3 +95,4 @@ class RoutesJsCommand extends Command
     }
 
 }
+
